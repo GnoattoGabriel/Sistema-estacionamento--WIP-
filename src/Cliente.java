@@ -7,11 +7,8 @@ public class Cliente {
     private int pontosFidelidade;
     private int mesesComoCliente;
     private boolean mensalista;
+    public DadosDeCobrança dadosDeCobrança;
 
-    private String banco;
-    private String agencia;
-    private String conta;
-    private String metodoPagamentoPreferencial;
 
     public Cliente(String nome, String cpf, String telefone,
                    int pontosFidelidade, int mesesComoCliente, boolean mensalista,
@@ -22,10 +19,7 @@ public class Cliente {
         this.pontosFidelidade = pontosFidelidade;
         this.mesesComoCliente = mesesComoCliente;
         this.mensalista = mensalista;
-        this.banco = banco;
-        this.agencia = agencia;
-        this.conta = conta;
-        this.metodoPagamentoPreferencial = metodoPagamentoPreferencial;
+
     }
 
     public void imprimirResumo() {
@@ -38,8 +32,13 @@ public class Cliente {
     }
 
     public String getDadosCobrancaFormatados() {
-        return banco + " | Agência " + agencia + " | Conta " + conta
-                + " | Método preferencial: " + metodoPagamentoPreferencial;
+        return dadosDeCobrança.getBanco()
+                + " | Agência "
+                + dadosDeCobrança.getAgencia()
+                + " | Conta "
+                + dadosDeCobrança.getConta()
+                + " | Método preferencial: "
+                + dadosDeCobrança.getMetodoPagamentoPreferencial();
     }
 
 
@@ -81,21 +80,5 @@ public class Cliente {
         }
 
         return 0;
-    }
-
-    public String getBanco() {
-        return banco;
-    }
-
-    public String getAgencia() {
-        return agencia;
-    }
-
-    public String getConta() {
-        return conta;
-    }
-
-    public String getMetodoPagamentoPreferencial() {
-        return metodoPagamentoPreferencial;
     }
 }

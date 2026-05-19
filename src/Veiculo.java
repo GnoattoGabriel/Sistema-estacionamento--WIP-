@@ -1,4 +1,6 @@
 
+import Adicionados.Seguradora;
+
 import java.time.LocalDateTime;
 
 public class Veiculo {
@@ -6,22 +8,15 @@ public class Veiculo {
     private String placa;
     private String modelo;
     private String cor;
-
-
-
-    private String seguradora;
-    private String numeroApolice;
-    private String telefoneAssistencia;
+    private Seguradora seguradora;
     private TicketEstacionamento ticketEstacionamento;
 
     public Veiculo(String placa, String modelo, String cor,
-                   String seguradora, String numeroApolice, String telefoneAssistencia) {
+                   String seguradora, String numeroApolice,
+                   String telefoneAssistencia) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
-        this.seguradora = seguradora;
-        this.numeroApolice = numeroApolice;
-        this.telefoneAssistencia = telefoneAssistencia;
     }
 
     public void imprimirDados() {
@@ -34,7 +29,11 @@ public class Veiculo {
     }
 
     public String getDadosSeguroFormatados() {
-        return seguradora + " | Apólice " + numeroApolice + " | Assistência " + telefoneAssistencia;
+        return seguradora
+                + " | Apólice "
+                + seguradora.getNumeroApolice()
+                + " | Assistência "
+                + seguradora.getTelefoneAssistencia();
     }
 
     public String getPlaca() {
@@ -52,12 +51,5 @@ public class Veiculo {
     public String getSeguradora() {
         return seguradora;
     }
-
-    public String getNumeroApolice() {
-        return numeroApolice;
-    }
-
-    public String getTelefoneAssistencia() {
-        return telefoneAssistencia;
-    }
 }
+
