@@ -67,7 +67,7 @@ public class Main {
 
         System.out.println("Minutos de permanência: " + ticket.calcularMinutosPermanencia(ticket));
         System.out.println("Desconto do cliente: " + cliente.calcularDescontoCliente(cliente) + "%");
-        System.out.println("Status da vaga: " + painelVagas.descreverStatus(vaga));
+        System.out.println("Status da vaga: " + vaga.descreverStatus(vaga));
         System.out.println();
 
         pagamento.imprimirComprovante();
