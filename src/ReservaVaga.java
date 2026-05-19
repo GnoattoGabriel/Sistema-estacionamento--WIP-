@@ -1,9 +1,11 @@
-
+import java.time.LocalDateTime;
 
 public class ReservaVaga {
 
     private Vaga vaga;
     private Cliente cliente;
+    private String nomeClienteReserva;
+    private LocalDateTime horarioReserva;
 
     public ReservaVaga(Vaga vaga, Cliente cliente) {
         this.vaga = vaga;
@@ -13,9 +15,9 @@ public class ReservaVaga {
     public void imprimirReserva() {
         System.out.println("Reserva da vaga: " + vaga.getCodigo());
         System.out.println("Setor: " + vaga.getSetor());
-        System.out.println("Cliente da reserva: " + vaga.getNomeClienteReserva());
+        System.out.println("Cliente da reserva: " + getNomeClienteReserva());
         System.out.println("Cliente vinculado: " + cliente.getNome());
-        System.out.println("Horário da reserva: " + vaga.getHorarioReserva());
+        System.out.println("Horário da reserva: " + getHorarioReserva());
     }
 
     public Vaga getVaga() {
@@ -24,5 +26,13 @@ public class ReservaVaga {
 
     public Cliente getCliente() {
         return cliente;
+    }
+
+    public String getNomeClienteReserva() {
+        return nomeClienteReserva;
+    }
+
+    public LocalDateTime getHorarioReserva() {
+        return horarioReserva;
     }
 }
