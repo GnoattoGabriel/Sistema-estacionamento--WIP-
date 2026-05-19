@@ -12,6 +12,8 @@ public class TicketEstacionamento {
     private Vaga vaga;
     private boolean perdido;
     private DateTimeEstacionamento entrada;
+    private LocalDateTime dataHoraEntrada;
+    private LocalDateTime dataHoraSaidaPrevista;
 
     public TicketEstacionamento(String codigo, Veiculo veiculo, Vaga vaga, boolean perdido) {
         this.codigo = codigo;
@@ -24,7 +26,7 @@ public class TicketEstacionamento {
     public void imprimirTicket() {
 
             DateTimeEstacionamento entrada = new DateTimeEstacionamento(
-                                                    veiculo.getDataHoraEntrada());
+                                                    getDataHoraEntrada());
 
             System.out.println("Ticket: " + codigo);
             System.out.println("Veículo: " + veiculo.getPlaca());
@@ -70,10 +72,10 @@ public class TicketEstacionamento {
     }
 
     public LocalDateTime getDataHoraEntrada() {
-        return veiculo.getDataHoraEntrada();
+        return dataHoraEntrada;
     }
 
     public LocalDateTime getDataHoraSaidaPrevista() {
-        return veiculo.getDataHoraSaidaPrevista();
+        return dataHoraSaidaPrevista;
     }
 }
